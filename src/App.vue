@@ -48,4 +48,8 @@
         --bitnob-transition-timing-slow: 0.35s;
     }
 
+    html {
+        font-size: 16px;
+    }
+
 </style>

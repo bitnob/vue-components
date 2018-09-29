@@ -55,15 +55,15 @@
         position: relative;
 
         font-family: var(--bitnob-font-family);
-        font-size: 16px;
+        font-size: 1rem;
 
-        height: 56px;
+        height: 3.5rem;
         border-radius: 3px;
-        border: 2px solid var(--bitnob-foreground);
+        border: .125rem solid var(--bitnob-foreground);
         
         input {
             flex: 1;
-            padding: 12px;
+            padding: 0.75rem;
             border: none;
             height: 100%;
             outline: none !important;
@@ -71,33 +71,37 @@
             background: transparent;
             font-family: inherit;
             font-size: inherit;
+            color: var(--bitnob-foreground);
         }
 
         .bitnob-textfield__label-cover {
             background: var(--bitnob-textfield-label-background, var(--bitnob-background, white));
-            font-size: 12px;
-            padding: 0 4px;
-            height: 3px;
+            font-size: 0.75rem;
+            padding: 0 .25rem;
+            height: .125rem;
             position: absolute;
             pointer-events: none;
-            left: 8px; top: -3px;
+            left: .5rem; top: -.125rem;
             color: transparent;
+
+            will-change: transform;
             transform: scaleX(0);
             transition: transform var(--bitnob-transition-timing-fast) var(--bitnob-transition-standard-easing);
         }
 
         label {
             position: absolute;            
-            left: 12px;
+            left: 0.75rem;
             pointer-events: none;
             
+            will-change: transform;
             transform-origin: center left;
             transition: transform var(--bitnob-transition-timing-fast) var(--bitnob-transition-standard-easing);
         }
 
         &.hasText,
         &.focused {
-            label { transform: scale(0.75) translateY(-35px); }
+            label { transform: scale(0.75) translateY(-2.25rem); }
             .bitnob-textfield__label-cover { transform: scaleX(1); }
         }
 
