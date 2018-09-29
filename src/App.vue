@@ -1,29 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div>
+
+        <bitnob-textfield v-model="email" type="email" label="Email" icon=""></bitnob-textfield>
+
+    </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+    import { Component, Vue } from 'vue-property-decorator';
+    import { BitnobTextfield } from '@/components';
+
+    @Component({
+        components: { BitnobTextfield }
+    })
+    export default class App extends Vue {
+        private email = '';
+    }
+
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+    * {
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --bitnob-background: white;
+
+        --bitnob-primary: #4CAF50;
+        --bitnob-secondary: green;
+        --bitnob-font-family: 'Roboto', sans-serif;
+
+        --bitnob-foreground: rgba(0, 0, 0, .72);
+        --bitnob-foreground-secondary: rgba(0, 0, 0, .52);
+        --bitnob-foreground-caption: rgba(0, 0, 0, .24);
+        --bitnob-foreground-disabled: rgba(0, 0, 0, .24);
+        --bitnob-divider: rgba(0, 0, 0, .12);
+
+        --bitnob-transition-standard-easing: cubic-bezier(0.4, 0.0, 0.2, 1);
+        --bitnob-transition-decelerate-easing: cubic-bezier(0.0, 0.0, 0.2, 1);
+        --bitnob-transition-accelerate-easing: cubic-bezier(0.4, 0.0, 1, 1);
+
+        --bitnob-transition-timing-fast: 0.25s;
+        --bitnob-transition-timing-normal: 0.3s;
+        --bitnob-transition-timing-slow: 0.35s;
+    }
+
 </style>
